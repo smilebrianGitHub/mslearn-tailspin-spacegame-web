@@ -44,6 +44,10 @@ steps:
     feedsToUse: 'select'
     vstsFeed: '$(System.TeamProject)/Tailspin.SpaceGame.Web.Models'
 
+- task: WhiteSource@21
+  inputs:
+    cwd: '$(System.DefaultWorkingDirectory)'
+
 - task: DotNetCoreCLI@2
   displayName: 'Build the project - $(buildConfiguration)'
   inputs:
